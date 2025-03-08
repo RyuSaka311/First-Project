@@ -1,12 +1,8 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class MoveBox : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerInput _input;
-
     [SerializeField]
     float _moveSpeed = 5f;
 
@@ -35,7 +31,7 @@ public class MoveBox : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         var dir = h * Vector2.right + v * Vector2.up;
-        
+
         if (dir != Vector2.zero)
         {
             var velo = _rb2d.linearVelocity;
